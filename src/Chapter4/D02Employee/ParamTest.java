@@ -48,6 +48,7 @@ public class ParamTest
         System.out.println("e.getSalary() = " + e.getSalary());
     }
 
+    // 相当于C++的传递 reference 即对象与该引用绑定之后,该引用不能再绑定其他对象
     public static void swap(Employee l, Employee r)
     {
         Employee tmp = l;

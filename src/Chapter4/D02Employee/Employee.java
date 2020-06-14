@@ -11,6 +11,16 @@ public class Employee
         id = 0;
     }
 
+    public Employee(double salary)
+    {
+        // call Employee(String, double)
+        this("Employee #" + nextID, salary);
+    }
+
+    public Employee()
+    {
+    }
+
     // 2. getter setter:
     public String getName()
     {
