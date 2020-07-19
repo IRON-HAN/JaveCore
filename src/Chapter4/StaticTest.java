@@ -1,6 +1,8 @@
-package Chapter4.D02Employee;
+package Chapter4;
 
-public class Main
+import Tool.Employee;
+
+public class StaticTest
 {
     public static void main(String[] args)
     {
@@ -11,14 +13,12 @@ public class Main
         employees[2] = new Employee("C", 300);
 
         for (Employee e : employees)
-            e.raiseSalary(5);
-
-        for (Employee e : employees)
         {
-            System.out.println("e.getName() = " + e.getName());
-            System.out.println("e.getSalary() = " + e.getSalary());
+            e.setId();
+            System.out.println("name= " + e.getName() + ",id= " + e.getId() + ",salary= " + e.getSalary());
         }
 
-
+        int n = Employee.getNextID();
+        System.out.println("nextId is = " + n);
     }
 }

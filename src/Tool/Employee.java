@@ -1,6 +1,15 @@
-package Chapter4.D02Employee;
+package Tool;
 
-public class Employee
+import java.util.*;
+
+/**
+ * @description: Employee
+ * @version: 2.0: implements Comparable
+ * @version: 3.0: implements Cloneable
+ * @date: 20/7/19 22:15
+ */
+
+public class Employee implements Comparable<Employee>, Cloneable
 {
     // 1. ctor:
     // Notes: always with "new" operator
@@ -13,8 +22,8 @@ public class Employee
 
     public Employee(double salary)
     {
-        // call Employee(String, double)
-        this("Employee #" + nextID, salary);
+        // call Tool.Employee(String, double)
+        this("Tool.Employee #" + nextID, salary);
     }
 
     public Employee()
@@ -55,6 +64,7 @@ public class Employee
         return nextID;
     }
 
+    // 单元测试
     public static void main(String[] args)
     {
         Employee employee = new Employee("A", 500);
@@ -64,7 +74,27 @@ public class Employee
 
     // field
     private String name;
+
     private double salary;
+
     private int id;
+
     private static int nextID = 1;
+
+    @Override
+    public String toString()
+    {
+        return "Employee{" + "name='" + name + '\'' + ", salary=" + salary + ", id=" + id + '}';
+    }
+
+    public Employee clone() throws CloneNotSupportedException
+    {
+        return (Employee) super.clone();
+    }
+
+    @Override
+    public int compareTo(Employee o)
+    {
+        return Double.compare(salary, o.salary);
+    }
 }

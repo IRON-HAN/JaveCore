@@ -1,10 +1,11 @@
+package Chapter4;
+
+import Tool.Employee;
+
 /*
  * 1. 方法可以改变对象参数的状态(从而可以改变实参中的成员变量)
  * 2. 方法不能让对象参数引用一个新的对象(即不能改变整个实参的指向)
  * */
-
-package Chapter4.D02Employee;
-
 public class ParamTest
 {
     public static void main(String[] args)
@@ -32,8 +33,6 @@ public class ParamTest
         swap(a, b);
         System.out.println("after = " + a.getName());
         System.out.println("after = " + b.getName());
-
-
     }
 
     public static void triple(double x)
@@ -57,6 +56,4 @@ public class ParamTest
         System.out.println("l.getName() = " + l.getName());
         System.out.println("r.getName() = " + r.getName());
     }
-
-
 }
